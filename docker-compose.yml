@@ -3,12 +3,13 @@ version: '3'
 services:
   magento1:
     build: ./magento
-    image: magento
     ports:
       - 9095:80
       - 9096:443
     depends_on:
       - db
+    env_file:
+      - .env
     environment:
       BASE_URL: https://magento1.com/
     volumes:
@@ -22,9 +23,8 @@ services:
     build: ./data
     ports:
       - 3308:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: magento
-      MYSQL_DATABASE: magento
+    env_file:
+      - .env
     volumes:
       - ./data/mysql:/var/lib/mysql
     networks:
@@ -38,6 +38,10 @@ services:
       PMA_HOST: db
       PMA_USER: root
       PMA_PASSWORD: magento
+    links:
+      - db
+    depends_on:
+      - db
     networks:
       - webnet
 networks:

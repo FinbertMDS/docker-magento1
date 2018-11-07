@@ -37,10 +37,10 @@ EXPOSE 80 443
 COPY run-apache /usr/local/bin/
 RUN chmod +x /usr/local/bin/run-apache
 
-COPY conf/php.ini /usr/local/etc/php/conf.d/
+COPY install_magento.sh /usr/local/bin/install_magento.sh
+RUN chmod +x /usr/local/bin/install_magento.sh
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-RUN chmod +x /usr/local/bin/composer
+COPY conf/php.ini /usr/local/etc/php/conf.d/
 
 CMD ["run-apache"]
 WORKDIR /var/www/html

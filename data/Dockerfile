@@ -1,3 +1,3 @@
-FROM mysql:5.6
+FROM mariadb:10.0
 
-COPY prepare_data/magento.sql /docker-entrypoint-initdb.d/init.sql
+COPY prepare_data/magento1.sql /docker-entrypoint-initdb.d/init.sql
