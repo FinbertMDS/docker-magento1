@@ -61,13 +61,13 @@ SSH to docker container with user: `root` or `www-data`. Default is `www-data`
 - Install nginx in host (nginx reverse proxy)
 - Links:
     - Magento2: 
-        - Fontend: https://magento1.com/
-        - Backend: https://magento1.com/admin/ or https://magento1.com/index.php/admin/
+        - Fontend: https://m1.com/
+        - Backend: https://m1.com/admin/ or https://m1.com/index.php/admin/
         
             Username: admin
             
             Password: admin123
-    - Phpmyadmin: http://phpmyadmin.magento1.com/
+    - Phpmyadmin: http://phpmyadmin.m1.com/
 - Source:
     - Download Magento 1: http://pubfiles.nexcess.net/magento/ce-packages/
     - Download Magento 1 Sample data: https://sourceforge.net/projects/mageloads/

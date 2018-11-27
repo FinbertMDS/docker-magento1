@@ -11,13 +11,13 @@ services:
     env_file:
       - .env
     environment:
-      BASE_URL: https://magento1.com/
+      BASE_URL: https://m1.com/
     volumes:
       - ./src:/var/www/html
     networks:
       webnet:
         aliases:
-          - magento1.com
+          - m1.com
 
   db:
     build: ./data
